@@ -9,6 +9,7 @@
   ================================================== -->
 	<meta charset="utf-8">
 	<title>MyLoveStory | 幸福永久</title>
+
 	<meta name="description" content="MyLoveStory | 幸福永久">
 	<meta name="author" content="www.zerotheme.com">
 	
@@ -40,6 +41,12 @@
     
 </head>
 <body>
+<audio id="au_bgm"  hidden="hidden" autoplay="autoplay" loop="loop">
+	<source src="bgm/bgm_wedding.mp3" type="audio/mpeg" />
+</audio>
+<div style="margin: 0 auto; width: 80%; position: fixed; bottom: 5px; height: 50px; font-size: 0; line-height: 0; z-index: 100; text-align: right;">
+	<img id="music_weizhi" src="images/music_op.png" width="50px" height="50px" />
+</div>
 <div class="zerogrid wrap-body">
 	
 	<!--////////////////////////////////////Top-->
@@ -386,7 +393,7 @@
 				<div class="row wrap-box"><!--Start Box-->
 					<div class="header">
 						<div class="wrapper">
-							<h2>Our Friends</h2>
+							<h2>Our Family</h2>
 							<hr class="line">
 							<span>text text text text text</span>
 						</div>
@@ -550,6 +557,15 @@
 				$(window).resize();
 			}, 200);
 		});
+        $("#music_weizhi").bind("click", function() {
+            if ($(this).attr("src") == "images/music_op.png") {
+                $(this).attr("src", "images/music_clo.png");
+                document.getElementById("au_bgm").pause()
+            } else {
+                $(this).attr("src", "images/music_op.png");
+                document.getElementById("au_bgm").play();
+            }
+        });
 	</script>
 </div>
 </body></html>
