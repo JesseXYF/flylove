@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>MyLoveStory | 幸福永久</title>
+
+	<meta name="description" content="MyLoveStory | 幸福永久">
+	<meta name="author" content="www.zerotheme.com">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/slider.css">
+	<!--  Resource style -->
+	<link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+    
+</head>
+<body>
+<audio id="au_bgm"  hidden="hidden" autoplay="autoplay" loop="loop">
+	<source id="au_source" src="bgm/bgm_baihuaxiang.mp3" type="audio/mpeg" />
+</audio>
+<div style="margin: 0 auto; width: 80%; position: fixed; bottom: 5px; height: 50px; font-size: 0; line-height: 0; z-index: 100; text-align: right;">
+	<img id="music_left" src="images/control_left.png" width="50px" height="50px" />
+	<img id="music_weizhi" src="images/music_op.png" width="50px" height="50px" />
+	<img id="music_right" src="images/control_right.png" width="50px" height="50px"/>
+</div>
+
+<div class="zerogrid wrap-body">
+	<!--////////////////////////////////////Top-->
+	<div id="top" >
+		<div class="zerogrid">
+			<h1 id="logo"><a href="/index"><div class="name t-right">薛云飞 <span> Love You </span></div><div class="and">&amp;</div><div class="name t-left"> 郭嫄嫄 <span> Forever</span></div></a></h1>
+		</div>
+	</div>
+	
+	<!--////////////////////////////////////Header-->
+	<div class="wrap-header zerogrid">
+		<div class="ribbon">
+			<div class="ribbon-stitches-top"></div>
+			<strong class="ribbon-content"><h1>The Story Of Us</h1></strong>
+			<div class="ribbon-stitches-bottom"></div>
+		</div>
+		<header>
+			<div class="clearfix">
+				<div class="cd-slider-wrapper cd-container">
+					<ul class="cd-slider" id="top_text">
+						<li>
+							<div class="wrap-img"></div>
+							<p>爱你永远不会变。</p>
+						</li>
+						<li>
+							<div class="wrap-img"></div>
+							<p>我愿化为剑，护你一世周全。</p>
+						</li>
+						<li>
+							<div class="wrap-img"></div>
+							<p>一见如故，便生满心欢喜。</p>
+						</li>
+					</ul> <!-- cd-slider -->
+				</div> <!-- cd-slider-wrapper -->
+			</div>
+		</header>
+	</div>
+
+<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >薛云飞网站</a></div>
+<!--////////////////////////////////////Container-->
+<section id="container">
+	<div class="wrap-container">
+		<!-----------------content-box-6-------------------->
+		<section class="content-box boxstyle-2 box-6">
+			<div class="zerogrid">
+				<div class="row wrap-box"><!--Start Box-->
+					<div class="box-item">
+						<blockquote><p>Stet clita kasd gubergren, no sea takimata sanctus est LOVE YOU FOREVER dolor sit amet vultatup duista.</p></blockquote>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+</section>
+
+<!--////////////////////////////////////Footer-->
+<footer>
+	<div class="wrap-footer">
+		<div class="zerogrid">
+			<h3>Thank You!</h3>
+		</div>
+	</div>
+	<div class="bottom-footer">
+		<div class="zerogrid">
+			<div class="wrap-bottom">
+			</div>
+		</div>
+	</div>
+</footer>
+
+	<!-- Resource jQuery -->
+	<script src="js/jquery-2.1.1.js"></script>
+	<!-- Slider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<script src="js/main.js"></script> 
+	<!-- Countdown -->
+	<script src="js/jquery.mb-comingsoon.min.js"></script>
+	<script type="text/javascript">
+        var arry_top = ["喜欢的少年是你，反过来还是你。","百场清欢无别事，我在等风也等你。","此情隔山海，山海亦可平。","伊人在梦中，厮守每个寒冬。","深爱自有天意，长情待如期。","红豆印相思，长安归故里。"];
+        for (var i = 0; i < arry_top.length; i++) {
+            $('#top_text').append("<li><div class='wrap-img'></div><p>"+arry_top[i]+"</p></li>");
+        }
+		$(function () {
+			$('#myCounter').mbComingsoon({ expiryDate: new Date(2020, 1, 0, 0, 1), speed:100 });
+			setTimeout(function () {
+				$(window).resize();
+			}, 200);
+		});
+        $("#music_weizhi").bind("click", function() {
+            if ($(this).attr("src") == "images/music_op.png") {
+                $(this).attr("src", "images/music_clo.png");
+                document.getElementById("au_bgm").pause()
+            } else {
+                $(this).attr("src", "images/music_op.png");
+                document.getElementById("au_bgm").play();
+            }
+        });
+        var arry_bgm = ["bgm/bgm_baihuaxiang.mp3","bgm/bgm_wedding.mp3"]
+        $("#music_left").bind("click", function() {
+            var now_bgm = $('#au_source').attr("src");
+            var bgm_num = arry_bgm.indexOf(now_bgm);
+            var bgm_result = arry_bgm[bgm_num]
+            if (bgm_num - 1< 0){
+                bgm_result = arry_bgm[arry_bgm.length - 1];
+			}else {
+                bgm_result = arry_bgm[bgm_num - 1]
+			}
+            $('#au_source').attr("src", bgm_result);
+            document.getElementById("au_bgm").load();
+        });
+        $("#music_right").bind("click", function() {
+            var now_bgm = $('#au_source').attr("src");
+            var bgm_num = arry_bgm.indexOf(now_bgm);
+            var bgm_result = arry_bgm[bgm_num]
+            if (bgm_num + 1>= arry_bgm.length){
+                bgm_result = arry_bgm[0];
+            }else {
+                bgm_result = arry_bgm[bgm_num + 1]
+            }
+            $('#au_source').attr("src", bgm_result);
+            document.getElementById("au_bgm").load();
+        });
+	</script>
+</div>
+</body></html>
