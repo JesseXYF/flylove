@@ -42,15 +42,16 @@
 </head>
 <body>
 <audio id="au_bgm"  hidden="hidden" autoplay="autoplay" loop="loop">
-	<source src="bgm/bgm_wedding.mp3" type="audio/mpeg" />
+	<source id="au_source" src="bgm/bgm_baihuaxiang.mp3" type="audio/mpeg" />
 </audio>
 <div style="margin: 0 auto; width: 80%; position: fixed; bottom: 5px; height: 50px; font-size: 0; line-height: 0; z-index: 100; text-align: right;">
+	<img id="music_left" src="images/control_left.png" width="50px" height="50px" />
 	<img id="music_weizhi" src="images/music_op.png" width="50px" height="50px" />
+	<img id="music_right" src="images/control_right.png" width="50px" height="50px"/>
 </div>
+
 <div class="zerogrid wrap-body">
-	
 	<!--////////////////////////////////////Top-->
-	
 	<div id="top" >
 		<div class="zerogrid">
 			<h1 id="logo"><a href="index.html"><div class="name t-right">薛云飞 <span> Love You </span></div><div class="and">&amp;</div><div class="name t-left"> 郭嫄嫄 <span> Forever</span></div></a></h1>
@@ -67,7 +68,7 @@
 		<header>
 			<div class="clearfix">
 				<div class="cd-slider-wrapper cd-container">
-					<ul class="cd-slider">
+					<ul class="cd-slider" id="top_text">
 						<li>
 							<div class="wrap-img"></div>
 							<p>爱你永远不会变。</p>
@@ -75,6 +76,10 @@
 						<li>
 							<div class="wrap-img"></div>
 							<p>我愿化为剑，护你一世周全。</p>
+						</li>
+						<li>
+							<div class="wrap-img"></div>
+							<p>一见如故，便生满心欢喜。</p>
 						</li>
 					</ul> <!-- cd-slider -->
 				</div> <!-- cd-slider-wrapper -->
@@ -551,6 +556,10 @@
 	<!-- Countdown -->
 	<script src="js/jquery.mb-comingsoon.min.js"></script>
 	<script type="text/javascript">
+        var arry_top = ["喜欢的少年是你，反过来还是你。","百场清欢无别事，我在等风也等你。","此情隔山海，山海亦可平。","伊人在梦中，厮守每个寒冬。","深爱自有天意，长情待如期。","红豆印相思，长安归故里。"];
+        for (var i = 0; i < arry_top.length; i++) {
+            $('#top_text').append("<li><div class='wrap-img'></div><p>"+arry_top[i]+"</p></li>");
+        }
 		$(function () {
 			$('#myCounter').mbComingsoon({ expiryDate: new Date(2020, 1, 0, 0, 1), speed:100 });
 			setTimeout(function () {
@@ -565,6 +574,31 @@
                 $(this).attr("src", "images/music_op.png");
                 document.getElementById("au_bgm").play();
             }
+        });
+        var arry_bgm = ["bgm_baihuaxiang.mp3","bgm/bgm_wedding.mp3"]
+        $("#music_left").bind("click", function() {
+            var now_bgm = $('#au_source').attr("src");
+            var bgm_num = arry_bgm.indexOf(now_bgm);
+            var bgm_result = arry_bgm[bgm_num]
+            if (bgm_num - 1< 0){
+                bgm_result = arry_bgm[arry_bgm.length - 1];
+			}else {
+                bgm_result = arry_bgm[bgm_num - 1]
+			}
+            $('#au_source').attr("src", bgm_result);
+            document.getElementById("au_bgm").load();
+        });
+        $("#music_right").bind("click", function() {
+            var now_bgm = $('#au_source').attr("src");
+            var bgm_num = arry_bgm.indexOf(now_bgm);
+            var bgm_result = arry_bgm[bgm_num]
+            if (bgm_num + 1>= arry_bgm.length){
+                bgm_result = arry_bgm[0];
+            }else {
+                bgm_result = arry_bgm[bgm_num + 1]
+            }
+            $('#au_source').attr("src", bgm_result);
+            document.getElementById("au_bgm").load();
         });
 	</script>
 </div>
