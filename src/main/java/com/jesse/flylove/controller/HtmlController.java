@@ -19,18 +19,19 @@ import java.util.List;
 @Controller
 public class HtmlController {
 
-    @RequestMapping(value = "/photoDetail",method = RequestMethod.GET)
-    public String getShowDetail(@RequestParam("num") int num, Model model){
+    @RequestMapping(value = "/photoDetail", method = RequestMethod.GET)
+    public String getShowDetail(@RequestParam("num") int num, Model model) {
         try {
             File directory = new File("");//参数为空
-            String courseFile = directory.getCanonicalPath() ;
-            FileReader reader = new FileReader(courseFile+"\\src\\main\\java\\com\\jesse\\flylove\\dto\\photos.txt");
+            String courseFile = directory.getCanonicalPath();
+            String[] localPath  =courseFile.split("/target");
+            FileReader reader = new FileReader(localPath[0] + "/src/main/java/com/jesse/flylove/dto/photos.txt");
             BufferedReader buf = new BufferedReader(reader);
             String s;
             String textValue = "";
             int i = 1;
-            while((s = buf.readLine() ) != null){
-                if (i ==num){
+            while ((s = buf.readLine()) != null) {
+                if (i == num) {
                     textValue = s;
                     break;
                 }
@@ -38,10 +39,10 @@ public class HtmlController {
             }
             reader.close();
             buf.close();
-            model.addAttribute("photoText",textValue);
-        }catch (IOException e){
+            model.addAttribute("photoText", textValue);
+        } catch (IOException e) {
             System.out.println(e);
-            model.addAttribute("photoText","一生一世的爱");
+            model.addAttribute("photoText", "一生一世的爱");
         }
         return "photo_detail";
     }
