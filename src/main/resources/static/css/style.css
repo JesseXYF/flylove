@@ -39,7 +39,7 @@ h1, h2 	{font-size: 25px;line-height: 25px;}
 h3, h4	{font-size: 20px;line-height: 20px;}
 h5, h6	{font-size: 16px;line-height: 16px;}
 
-p{margin: 10px 0;}
+p{margin: 10px 0;font-family: STXingkai;font-size: 20px;}
 
 .t-center{text-align: center!important;}
 .t-left{text-align: left!important;}
