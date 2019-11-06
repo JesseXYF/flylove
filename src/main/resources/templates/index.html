@@ -41,6 +41,8 @@
     
 </head>
 <body>
+<!--回到顶部-->
+<div id="back-to-top" class="red" data-scroll="body" style="top:-46px;color:red;">回到顶部 </div>
 <audio id="au_bgm"  hidden="hidden" autoplay="autoplay" loop="loop">
 	<source id="au_source" src="bgm/bgm_baihuaxiang.mp3" type="audio/mpeg" />
 </audio>
@@ -554,6 +556,39 @@
 	<!-- Countdown -->
 	<script src="js/jquery.mb-comingsoon.min.js"></script>
 	<script type="text/javascript">
+		<!-- 回顶部 -->
+        window.onload = function () {
+            // 利用 data-scroll 属性，滚动到任意 dom 元素
+            $.scrollto = function (scrolldom, scrolltime) {
+                $(scrolldom).click(function () {
+                    var scrolltodom = $(this).attr("data-scroll");
+                    $(this).addClass("active").siblings().removeClass("active");
+                    $('html, body').animate({
+                        scrollTop: $(scrolltodom).offset().top
+                    }, scrolltime);
+                    return false;
+                });
+            };
+            //判断位置控制 返回顶部的显隐
+            if ($(window).width() > 800) {//如果窗体的宽度大于800
+                var backTo = $("#back-to-top");//获取back-to-top对象
+                var backHeight = $(window).height() - 980 + 'px';//让window高度减980
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() > 700 && backTo.css('top') === '-900px') {
+                        backTo.css('top', backHeight);
+                    }
+                    else if ($(window).scrollTop() <= 700 && backTo.css('top') !== '-900px') {
+                        backTo.css('top', '-900px');
+                    }
+                });
+
+            }
+            //启用
+            $.scrollto("#back-to-top", 800);
+
+        }
+        <!--回顶部-->
+
         var arry_top = ["喜欢的少年是你，反过来还是你。","百场清欢无别事，我在等风也等你。","此情隔山海，山海亦可平。","伊人在梦中，厮守每个寒冬。","深爱自有天意，长情待如期。","红豆印相思，长安归故里。"];
         for (var i = 0; i < arry_top.length; i++) {
             $('#top_text').append("<li><div class='wrap-img'></div><p>"+arry_top[i]+"</p></li>");
@@ -600,4 +635,38 @@
         });
 	</script>
 </div>
+<div id="page_end_html">
+	<script type="text/javascript">
+        /* 鼠标特效 */
+        var a_idx = 0;
+        jQuery(document).ready(function($) {
+            $("body").click(function(e) {
+                var a = new Array("❤I LOVE YOU❤","❤萌萌哒❤","❤欢迎❤","❤加油鸭❤","❤100个点赞❤","❤Nice❤","❤不亏❤","❤怎么说❤","❤很强❤","❤努力❤","❤爱你❤","❤飞飞❤","❤媛媛❤");
+                var $i = $("<span></span>").text(a[a_idx]);
+                a_idx = (a_idx + 1) % a.length;
+                var x = e.pageX,
+                    y = e.pageY;
+                $i.css({
+                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+                });
+                $("body").append($i);
+                $i.animate({
+                        "top": y - 180,
+                        "opacity": 0
+                    },
+                    1500,
+                    function() {
+                        $i.remove();
+                    });
+            });
+        });
+	</script>
+</div>
+
+
 </body></html>
