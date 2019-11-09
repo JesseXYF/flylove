@@ -636,38 +636,7 @@
         });
 	</script>
 </div>
-<div id="page_end_html">
-	<script type="text/javascript">
-        /* 鼠标特效 */
-        var a_idx = 0;
-        jQuery(document).ready(function($) {
-            $("body").click(function(e) {
-                var a = new Array("❤I LOVE YOU❤","❤萌萌哒❤","❤欢迎❤","❤加油鸭❤","❤100个点赞❤","❤Nice❤","❤不亏❤","❤怎么说❤","❤很强❤","❤努力❤","❤爱你❤","❤飞飞❤","❤媛媛❤");
-                var $i = $("<span></span>").text(a[a_idx]);
-                a_idx = (a_idx + 1) % a.length;
-                var x = e.pageX,
-                    y = e.pageY;
-                $i.css({
-                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
-                    "top": y - 20,
-                    "left": x,
-                    "position": "absolute",
-                    "font-weight": "bold",
-                    "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
-                });
-                $("body").append($i);
-                $i.animate({
-                        "top": y - 180,
-                        "opacity": 0
-                    },
-                    1500,
-                    function() {
-                        $i.remove();
-                    });
-            });
-        });
-	</script>
-</div>
+
 <!--看板娘-->
 <!-- waifu-tips.js 依赖 JQuery 库 -->
 <script src="assets/jquery.min.js?v=3.3.1"></script>
@@ -709,5 +678,36 @@
     initModel("assets/waifu-tips.json?v=1.4.2")
 </script>
 <!--看板娘-->
-
+<div id="page_end_html">
+	<script type="text/javascript">
+        /* 鼠标特效 */
+        var a_idx = 0;
+        jQuery(document).ready(function($) {
+            $("body").click(function(e) {
+                var a = new Array("❤I LOVE YOU❤","❤萌萌哒❤","❤欢迎❤","❤加油鸭❤","❤100个点赞❤","❤Nice❤","❤不亏❤","❤怎么说❤","❤很强❤","❤努力❤","❤爱你❤","❤飞飞❤","❤媛媛❤");
+                var $i = $("<span></span>").text(a[a_idx]);
+                a_idx = (a_idx + 1) % a.length;
+                var x = e.pageX,
+                    y = e.pageY;
+                $i.css({
+                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+                });
+                $("body").append($i);
+                $i.animate({
+                        "top": y - 180,
+                        "opacity": 0
+                    },
+                    1500,
+                    function() {
+                        $i.remove();
+                    });
+            });
+        });
+	</script>
+</div>
 </body></html>
